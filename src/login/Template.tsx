@@ -53,8 +53,8 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     }
 
     return (
-        <div className="flex-col">
-            <div className={cn(kcClsx("kcLoginClass"), "flex justify-evenly", pageId === "login.ftl" && "flex-row-reverse")}>
+        <div className="flex flex-col h-full w-full">
+            <div className={cn(kcClsx("kcLoginClass"), "flex justify-evenly h-full mt-20", pageId === "login.ftl" && "flex-row-reverse")}>
                 <div className={cn(kcClsx("kcFormCardClass"), "m-0")}>
                     <header className={cn(kcClsx("kcFormHeaderClass"), "items-start")}>
                         {(() => {
@@ -144,7 +144,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                 </div>
             </div>
 
-            <div id="footer" className="h-24 border-t-[3px] mt-20 flex items-center justify-center">
+            <div id="footer" className="h-24 w-full border-t-[3px] mt-20 flex items-center justify-center absolute bottom-0">
                 <h1 className="text-xl text-[#0000007c]">Copyright © 2025 | Eventifye</h1>
             </div>
         </div>
