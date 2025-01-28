@@ -54,7 +54,13 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     return (
         <div className="flex flex-col h-full w-full">
-            <div className={cn(kcClsx("kcLoginClass"), "flex justify-evenly h-full mt-20", pageId === "login.ftl" && "flex-row-reverse")}>
+            <div
+                className={cn(
+                    kcClsx("kcLoginClass"),
+                    "flex justify-evenly h-full mt-20",
+                    (pageId === "login.ftl" || pageId === "login-reset-password.ftl") && "flex-row-reverse"
+                )}
+            >
                 <div className={cn(kcClsx("kcFormCardClass"), "m-0")}>
                     <header className={cn(kcClsx("kcFormHeaderClass"), "items-start")}>
                         {(() => {
@@ -131,17 +137,20 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                         </div>
                     </div>
                 </div>
-                <div className="flex-col w-1/2 content-center">
-                    <div className="inline-flex gap-2">
-                        <h3 className="text-3xl font-bold">Eventfye</h3>
-                        <EventfyeIcon />
+                {(pageId === "register.ftl" || pageId === "login.ftl" || pageId === "login-reset-password.ftl") && (
+                    <div className="flex-col w-1/2 content-center">
+                        <div className="inline-flex gap-2">
+                            <h3 className="text-3xl font-bold">Eventfye</h3>
+                            <EventfyeIcon />
+                        </div>
+                        <h1 className="text-7xl font-semibold mt-1">
+                            {pageId === "register.ftl" && msg("eventfyeHeader")}
+                            {pageId === "login.ftl" && msg("eventfyeHeaderLogin")}
+                            {pageId === "login-reset-password.ftl" && msg("eventfyeResetPassword")}
+                        </h1>
+                        <p className="mt-5 text-xl w-2/3">{pageId === "register.ftl" && msg("eventfyeParagraph")}</p>
                     </div>
-                    <h1 className="text-7xl font-semibold mt-1">
-                        {pageId === "register.ftl" && msg("eventfyeHeader")}
-                        {pageId === "login.ftl" && msg("eventfyeHeaderLogin")}
-                    </h1>
-                    <p className="mt-5 text-xl w-2/3">{pageId === "register.ftl" && msg("eventfyeParagraph")}</p>
-                </div>
+                )}
             </div>
 
             <div id="footer" className="h-24 w-full border-t-[3px] mt-20 flex items-center justify-center absolute bottom-0">

@@ -12,6 +12,7 @@ const { useI18n, ofTypeI18n } = i18nBuilder
             eventfyeHeader: "Inscreva-se em eventos de forma prática",
             eventfyeParagraph: "Cadastre-se na Eventfye e encontre seus eventos de forma simples e rápida.",
             eventfyeHeaderLogin: "Faça seu login na plataforma",
+            eventfyeResetPassword: "Recupere a sua senha Eventfye:"
             
         }
     })
