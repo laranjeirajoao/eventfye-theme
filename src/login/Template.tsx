@@ -53,15 +53,15 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     }
 
     return (
-        <div className="flex flex-col h-full w-full">
+        <div className="flex flex-col w-full">
             <div
                 className={cn(
                     kcClsx("kcLoginClass"),
-                    "flex justify-evenly h-full mt-20",
+                    "flex justify-evenly min-h-[63vh] mt-20",
                     (pageId === "login.ftl" || pageId === "login-reset-password.ftl") && "flex-row-reverse"
                 )}
             >
-                <div className={cn(kcClsx("kcFormCardClass"), "m-0")}>
+                <div className={cn(kcClsx("kcFormCardClass"), "m-0 h-fit")}>
                     <header className={cn(kcClsx("kcFormHeaderClass"), "items-start")}>
                         {(() => {
                             const node = !(auth !== undefined && auth.showUsername && !auth.showResetCredentials) ? (
@@ -138,7 +138,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                     </div>
                 </div>
                 {(pageId === "register.ftl" || pageId === "login.ftl" || pageId === "login-reset-password.ftl") && (
-                    <div className="flex-col w-1/2 content-center">
+                    <div className="flex-col w-1/3 content-center">
                         <div className="inline-flex gap-2">
                             <h3 className="text-3xl font-bold">Eventfye</h3>
                             <EventfyeIcon />
@@ -153,7 +153,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                 )}
             </div>
 
-            <div id="footer" className="h-24 w-full border-t-[3px] mt-20 flex items-center justify-center absolute bottom-0">
+            <div id="footer" className="h-24 w-full border-t-[3px] mt-20 flex items-center justify-center">
                 <h1 className="text-xl text-[#0000007c]">Copyright © 2025 | Eventifye</h1>
             </div>
         </div>
