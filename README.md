@@ -25,5 +25,12 @@ Bem-vindo ao **Eventfye**, a solução definitiva para organizar e gerenciar eve
  - **MySQL**
  - **Keycloak (para autenticação e autorização)**
 
-## Tema
- ### Esse repositório em específico serve para customizar o tema do keycloak, implementando as telas de login, registro e recuperar senha
+## 🖌️ Tema
+ ### Keycloakify
+ - **Utiliza React**
+ - **TailwindCSS**
+ - **Shadcn/UI**
+ ### Telas implementadas
+ - **Login**
+ - **Cadastro**
+ - **Recuperar senha**
